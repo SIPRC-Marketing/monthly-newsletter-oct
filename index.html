@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النشرة الشهرية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Readex Pro', 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* تعريف الألوان الرئيسية المستوحاة من الصورة المرفقة */
+        :root {
+            --brand-dark-blue: #1a2a44;
+            --brand-mid-blue: #1e3a5f;
+            --brand-slate-blue: #5a7289;
+            --brand-light-slate: #8297ab;
+            --brand-terracotta: #8c4a39;
+            --brand-light-gray: #e9eaeb;
+            --brand-off-white: #f2f2f2;
+        }
+        .brand-bg-dark-blue { background-color: var(--brand-dark-blue); }
+        .brand-bg-mid-blue { background-color: var(--brand-mid-blue); }
+        .brand-bg-slate-blue { background-color: var(--brand-slate-blue); }
+        .brand-bg-light-slate { background-color: var(--brand-light-slate); }
+        .brand-bg-terracotta { background-color: var(--brand-terracotta); }
+        .brand-bg-light-gray { background-color: var(--brand-light-gray); }
+        .brand-bg-off-white { background-color: var(--brand-off-white); }
+        
+        .brand-text-dark-blue { color: var(--brand-dark-blue); }
+        .brand-text-mid-blue { color: var(--brand-mid-blue); }
+        .brand-text-slate-blue { color: var(--brand-slate-blue); }
+        .brand-text-light-slate { color: var(--brand-light-slate); }
+        .brand-text-terracotta { color: var(--brand-terracotta); }
+        
+        .brand-border-terracotta { border-color: var(--brand-terracotta); }
+
+        /* Styles for the interactive tab section */
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            color: #6b7280; /* text-gray-500 */
+        }
+        .tab-btn:hover {
+            background-color: #e5e7eb; /* hover:bg-gray-200 */
+        }
+        .tab-btn.active {
+            background-color: var(--brand-dark-blue);
+            color: white;
+        }
+        .tab-content {
+            padding: 1.5rem;
+            background-color: var(--brand-off-white);
+            border-radius: 0.5rem;
+            color: var(--brand-mid-blue);
+            line-height: 1.75;
+            font-size: 1.125rem;
+            border: 1px solid var(--brand-light-gray);
+            min-height: 150px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: none; /* Hide by default */
+        }
+        .tab-content.active {
+            display: flex; /* Show active content */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 brand-bg-off-white">
+    <div class="max-w-3xl mx-auto bg-white shadow-lg">
+
+        <!-- 1. الهيدر -->
+        <header class="py-8 px-6 flex justify-between items-center">
+             <img src="https://www2.0zz0.com/2025/09/27/19/410670894.png" alt="شعار SIPRC" class="w-40">
+            <div class="text-left">
+                <h1 class="text-3xl font-bold brand-text-dark-blue">نشرة SIPRC الشهرية</h1>
+                <p class="text-lg text-gray-500 brand-text-slate-blue">أكتوبر</p>
+            </div>
+        </header>
+
+        <!-- 2. الافتتاحية الجذابة -->
+        <section class="relative text-center">
+            <!-- [صورة خلفية لأوراق خريف وكوب قهوة دافئ] -->
+            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=2070&auto=format&fit=crop" alt="أجواء الخريف والشتاء" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+                <h2 class="text-4xl font-bold text-white leading-tight">أهلاً بالخريف، وحكايات الشتاء!</h2>
+            </div>
+        </section>
+        <div class="p-8 bg-white">
+            <p class="text-xl text-center brand-text-dark-blue leading-relaxed">
+                ابتدا الخريف وابتدأت أوراقه تتساقط، وجاءت بدايات الشتاء تنثر علينا نسمة باردة تشرح الصدر. ما عندكم عذر! الجو بدأ يزين والنفسية بتزين معه أكثر. 😊🍂
+            </p>
+        </div>
+
+        <!-- فاصل -->
+        <div class="h-px bg-gray-200 brand-bg-light-gray"></div>
+
+        <!-- إجابات الشهر الماضي (النسخة التفاعلية) -->
+        <section class="p-8 bg-white">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold brand-text-dark-blue">أصداء تساؤل الشهر الماضي 🗣️</h3>
+                <p class="mt-4 text-xl brand-text-slate-blue max-w-2xl mx-auto">سألنا عن العادة الصغيرة التي قد تحسن أجواء العمل، وهذه بعض من إجاباتكم الرائعة. اضغط على الاسم لقراءة المشاركة:</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- شريط الأسماء (Tabs) -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6 border-b-2 border-gray-200 pb-4">
+                    <button class="tab-btn" data-tab="mohammed">محمد العمير</button>
+                    <button class="tab-btn" data-tab="sara">سارة المنيع</button>
+                    <button class="tab-btn" data-tab="taghreed">تغريد عفيفي</button>
+                    <button class="tab-btn" data-tab="saud">سعود القحاني</button>
+                    <button class="tab-btn" data-tab="abdulrahman">عبدالرحمن الجويني</button>
+                </div>
+
+                <!-- حاوية الإجابات -->
+                <div id="answers-container" class="relative">
+                    <!-- رسالة ابتدائية -->
+                    <div id="answers-placeholder" class="tab-content active">
+                        <p class="text-gray-400">اختر أحد الأسماء أعلاه لقراءة مشاركته</p>
+                    </div>
+                    <!-- إجابة محمد العمير -->
+                    <div id="mohammed" class="tab-content">
+                        <p>"المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها."</p>
+                    </div>
+                    <!-- إجابة سارة المنيع -->
+                    <div id="sara" class="tab-content">
+                        <p>"المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة. حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط."</p>
+                    </div>
+                    <!-- إجابة تغريد عفيفي -->
+                    <div id="taghreed" class="tab-content">
+                        <p>"المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة. الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه."</p>
+                    </div>
+                    <!-- إجابة سعود القحاني -->
+                    <div id="saud" class="tab-content">
+                        <p>"الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير. لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة طبعا مالي الا اسبوع بس احس نتائجها فعالة."</p>
+                    </div>
+                    <!-- إجابة عبدالرحمن الجويني -->
+                    <div id="abdulrahman" class="tab-content">
+                        <p>"كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة. قدرت احلها بعد ما عملت mind mapping اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي. ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. الاستبيان التفاعلي: "صوتك يهمنا" -->
+        <section id="interactive-survey" class="p-8 brand-bg-light-gray">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                <!-- رسالة الشكر (مخفية افتراضياً) -->
+                <div id="survey-thanks" class="hidden text-center">
+                    <div class="text-6xl mb-4">🎉</div>
+                    <h3 class="text-3xl font-bold brand-text-dark-blue">شكراً لمشاركتك!</h3>
+                    <p class="mt-2 text-xl brand-text-slate-blue">رأيك يهمنا ويساعدنا على تطوير النشرة. نتطلع دائمًا لسماع صوتك.</p>
+                </div>
+
+                <!-- نموذج الاستبيان -->
+                <div id="survey-form">
+                    <div class="text-center mb-6">
+                        <h3 class="text-3xl font-bold brand-text-dark-blue">صوتك يهمنا 🗳️</h3>
+                        <p class="mt-2 text-xl brand-text-slate-blue">ما هو أكثر عمود تستمتع بقراءته في نشرتنا؟</p>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- الخيارات -->
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="أهم الأحداث" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">أهم الأحداث</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="ما عندك جدول في سيدة كل المدن" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">ما عندك جدول في سيدة كل المدن</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="إضاءات" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">إضاءات</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="معلومة" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">معلومة</span>
+                        </label>
+                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="إلهام" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">إلهام</span>
+                        </label>
+                         <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="الأكثر تفاعل" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">الأكثر تفاعل</span>
+                        </label>
+                        <!-- خيار الاقتراح -->
+                         <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                            <input type="radio" name="survey_option" value="suggest" id="option_suggest" class="form-radio h-5 w-5 brand-text-terracotta text-terracotta-600">
+                            <span class="mr-4 text-lg brand-text-mid-blue">اقترح عمود جديد...</span>
+                        </label>
+                    </div>
+                    <!-- صندوق الاقتراح (مخفي افتراضياً) -->
+                    <div id="suggestion-box" class="hidden mt-4">
+                        <textarea id="suggestion-text" rows="3" placeholder="اكتب مقترحك هنا..." class="w-full p-3 border-2 rounded-lg focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition"></textarea>
+                    </div>
+                    <!-- زر المشاركة -->
+                    <button id="submit-survey" class="w-full mt-6 text-white font-bold py-3 px-8 rounded-lg brand-bg-terracotta hover:opacity-90 transition-opacity duration-300 text-lg">
+                        شاركنا رأيك الآن
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاصل -->
+        <div class="h-px bg-gray-200 brand-bg-light-gray"></div>
+
+        <!-- قسم أجواء أكتوبر -->
+        <section class="p-8 md:p-12 brand-bg-off-white">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold brand-text-dark-blue">أجواء أكتوبر 🌤️</h3>
+                <p class="text-xl brand-text-slate-blue mt-2">نظرة على درجات الحرارة المتوقعة هذا الشهر.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- بطاقة الرياض -->
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transition-transform hover:scale-105">
+                    <h4 class="text-2xl font-bold brand-text-dark-blue mb-4">الرياض</h4>
+                    <div class="flex justify-around items-center">
+                        <div class="text-center">
+                            <span class="text-4xl">☀️</span>
+                            <p class="text-lg font-semibold brand-text-slate-blue mt-2">أعلى درجة</p>
+                            <p class="text-4xl font-bold brand-text-terracotta">39°</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-4xl">🌙</span>
+                            <p class="text-lg font-semibold brand-text-slate-blue mt-2">أقل درجة</p>
+                            <p class="text-4xl font-bold brand-text-mid-blue">19°</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- بطاقة مدينة نصر -->
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transition-transform hover:scale-105">
+                    <h4 class="text-2xl font-bold brand-text-dark-blue mb-4">مدينة نصر</h4>
+                     <div class="flex justify-around items-center">
+                        <div class="text-center">
+                            <span class="text-4xl">☀️</span>
+                            <p class="text-lg font-semibold brand-text-slate-blue mt-2">أعلى درجة</p>
+                            <p class="text-4xl font-bold brand-text-terracotta">33°</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-4xl">🌙</span>
+                            <p class="text-lg font-semibold brand-text-slate-blue mt-2">أقل درجة</p>
+                            <p class="text-4xl font-bold brand-text-mid-blue">14°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاصل -->
+        <div class="h-px bg-gray-200 brand-bg-light-gray"></div>
+
+        <!-- قسم أماكن أكتوبر -->
+        <section class="p-8 md:p-12 bg-white">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold brand-text-dark-blue">أماكن أكتوبر 🎭</h3>
+                <p class="text-xl brand-text-slate-blue mt-2">فعاليات وأماكن تستحق الزيارة هذا الشهر.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- بطاقة الرياض -->
+                <div class="bg-gray-50 brand-bg-off-white p-6 rounded-xl shadow-inner flex flex-col">
+                    <h4 class="text-2xl font-bold brand-text-dark-blue mb-4 text-center border-b pb-2">الرياض</h4>
+                    <div class="flex-1 flex flex-col justify-center">
+                        <!-- مناسبة 1: معرض الكتاب -->
+                        <div>
+                            <img src="https://www2.0zz0.com/2025/09/27/18/900312902.jpeg" alt="معرض الرياض الدولي للكتاب" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                            <h5 class="font-bold brand-text-mid-blue text-lg">معرض الرياض الدولي للكتاب</h5>
+                            <p class="brand-text-slate-blue my-2 text-sm">موعد جديد مع أكبر حدث ثقافي في المنطقة والذي يضم دور نشر من مختلف انحاء العالم، وذلك في الفترة من 2 - 12 أكتوبر.</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">📍 الموقع:</span> حرم جامعة الأميرة نورة</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">⏰ الأوقات:</span> ١١ص - ١٢ م</p>
+                        </div>
+                        <!-- فاصل بين الفعاليات -->
+                        <div class="border-t border-gray-300 my-8"></div>
+                        <!-- مناسبة 2: مجمع الزلال -->
+                        <div>
+                             <img src="https://www2.0zz0.com/2025/09/27/18/857324874.jpeg" alt="مجمع الزلال التراثي" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                            <h5 class="font-bold brand-text-mid-blue text-lg">مجمع الزلال التراثي</h5>
+                            <p class="brand-text-slate-blue my-2 text-sm">وجهة تراثية عصرية في قلب الدرعية التاريخية، تتميز بمقاهيها الراقية ومطاعمها وإطلالاتها الساحرة على حي الطريف.</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">📍 الموقع:</span> الدرعية</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">⏰ الأوقات:</span> ٩ ص - ١٢ م</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- بطاقة مدينة نصر -->
+                <div class="bg-gray-50 brand-bg-off-white p-6 rounded-xl shadow-inner flex flex-col">
+                    <h4 class="text-2xl font-bold brand-text-dark-blue mb-4 text-center border-b pb-2">مدينة نصر</h4>
+                    <div class="flex-1 flex flex-col justify-center">
+                        <!-- مناسبة 1: The Garden -->
+                        <div>
+                            <img src="https://www2.0zz0.com/2025/09/27/18/585171020.jpeg" alt="The Garden" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                            <h5 class="font-bold brand-text-mid-blue text-lg">The Garden</h5>
+                            <p class="brand-text-slate-blue my-2 text-sm">مكان مثالي للاسترخاء في الهواء الطلق، يقدم قائمة متنوعة من المأكولات والمشروبات في أجواء هادئة ومريحة.</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">📍 الموقع:</span> الحديقة الدولية بالقاهرة</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">⏰ الأوقات:</span> ١٠ ص - ١ ص</p>
+                        </div>
+                        <!-- فاصل بين الفعاليات -->
+                        <div class="border-t border-gray-300 my-8"></div>
+                        <!-- مناسبة 2: مطعم سمرا -->
+                        <div>
+                            <img src="https://www2.0zz0.com/2025/09/27/18/133477578.jpeg" alt="مطعم سمرا" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md bg-gray-200">
+                            <h5 class="font-bold brand-text-mid-blue text-lg">مطعم سمرا</h5>
+                            <p class="brand-text-slate-blue my-2 text-sm">يقدم تجربة طعام فريدة تجمع بين المطبخ الشرقي الأصيل والأجواء العصرية المريحة، مثالي للتجمعات العائلية والأصدقاء.</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                            <p class="text-sm brand-text-slate-blue"><span class="font-semibold">📍 الموقع:</span> حديقة الطفل</p>
+                            <div class="w-full border-t border-gray-200 my-4"></div>
+                             <p class="text-sm brand-text-slate-blue"><span class="font-semibold">⏰ الأوقات:</span> ٩ ص - ٣ ص</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاصل -->
+        <div class="h-px bg-gray-200 brand-bg-light-gray"></div>
+
+        <!-- 4. قسم إضاءات (محتوى جديد) -->
+        <section class="p-8 md:p-12 brand-bg-off-white">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold brand-text-dark-blue">إضاءات ✨</h3>
+                <p class="text-xl brand-text-slate-blue mt-2">معلومات سريعة ومفيدة لصحتك وعملك.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
+                
+                <!-- بطاقة: فيتامين د -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
+                    <div class="mx-auto mb-4 w-16 h-16 rounded-full brand-bg-light-gray flex items-center justify-center">
+                        <span class="text-3xl">☀️</span>
+                    </div>
+                    <h4 class="text-xl font-bold brand-text-terracotta mb-3">صحتك أولاً: فيتامين د</h4>
+                    <ul class="text-left space-y-2 brand-text-mid-blue">
+                        <li><b>مصادر طبيعية:</b> البيض، أشعة الشمس، والأسماك.</li>
+                        <li><b>المعدل الطبيعي:</b> 20 – 50 نانوغرام/مل.</li>
+                        <li class="text-red-600"><b>تحذير:</b> زيادته تسبب تراكم الكالسيوم في الدم.</li>
+                    </ul>
+                </div>
+
+                <!-- بطاقة: جسم الإنسان يضيء -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
+                     <div class="mx-auto mb-4 w-16 h-16 rounded-full brand-bg-light-gray flex items-center justify-center">
+                        <span class="text-3xl">💡</span>
+                    </div>
+                    <h4 class="text-xl font-bold brand-text-terracotta mb-3">هل تعلم؟ جسمك يضيء!</h4>
+                    <p class="brand-text-mid-blue leading-relaxed">
+                        يطلق جسم الإنسان ضوءاً خافتاً جداً (Bioluminescence) نتيجة تفاعلات كيميائية طبيعية في خلايانا، لكنه أضعف من أن تراه العين البشرية.
+                    </p>
+                </div>
+
+                <!-- بطاقة: اختصار مايكروسوفت أوفيس -->
+                <div class="bg-white p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
+                     <div class="mx-auto mb-4 w-16 h-16 rounded-full brand-bg-light-gray flex items-center justify-center">
+                        <span class="text-3xl">⌨️</span>
+                    </div>
+                    <h4 class="text-xl font-bold brand-text-terracotta mb-3">اختصار تقني في Office</h4>
+                    <p class="brand-text-mid-blue leading-relaxed">
+                       هل تعلم أن الضغط على مفتاح <b class="brand-text-dark-blue">F4</b> في برامج أوفيس (وورد، إكسل، بوربوينت) يكرر آخر إجراء قمت به؟ جربها لتوفير الوقت!
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- فاصل -->
+        <div class="h-px bg-gray-200 brand-bg-light-gray"></div>
+
+
+        <!-- 8. لقطة التفاعل: "الأكثر تفاعلاً" (محتوى محدث) -->
+        <section class="p-8 md:p-12 brand-bg-off-white">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold brand-text-dark-blue">تفاعلكم يصنع الفرق!</h3>
+                <p class="text-xl brand-text-slate-blue mt-2 max-w-3xl mx-auto">نحتفي هذا الشهر بزميلتنا <span class="font-bold brand-text-terracotta">سارة المنيع</span> التي سجلت رقماً قياسياً جديداً في التفاعل، لتكون نجمة النشرة لهذا الشهر! 🚀</p>
+            </div>
+        
+            <div class="max-w-4xl mx-auto">
+                <!-- الرقم الإجمالي - التصميم الجديد -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8 flex flex-col md:flex-row items-center justify-between text-center md:text-right">
+                    <div class="flex-shrink-0 mb-6 md:mb-0 md:ml-8">
+                         <div class="relative w-40 h-40 flex items-center justify-center">
+                            <svg class="absolute inset-0 w-full h-full brand-text-light-slate" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="4" fill="none" />
+                            </svg>
+                            <div class="text-5xl">🏆</div>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <p class="text-lg font-semibold brand-text-slate-blue uppercase tracking-wider">رقم قياسي جديد</p>
+                        <h4 class="text-5xl md:text-7xl font-bold brand-text-terracotta my-2">49 تفاعلاً</h4>
+                        <p class="text-lg brand-text-mid-blue">بواسطة <span class="font-bold">سارة المنيع</span></p>
+                    </div>
+                </div>
+        
+                <!-- تفاصيل التفاعل - تصميم الشبكة الموزونة -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- بطاقة: تفاعل مع الفريق -->
+                    <div class="brand-bg-dark-blue p-6 rounded-xl text-center text-white transition-transform hover:scale-105 hover:shadow-lg">
+                        <svg class="w-10 h-10 brand-text-light-slate mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <div class="text-4xl font-bold">18</div>
+                        <p class="mt-1 font-semibold text-gray-300">تفاعل مع الفريق</p>
+                    </div>
+                    <!-- بطاقة: حسابات الشركة -->
+                    <div class="brand-bg-dark-blue p-6 rounded-xl text-center text-white transition-transform hover:scale-105 hover:shadow-lg">
+                         <svg class="w-10 h-10 brand-text-light-slate mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.25a2.25 2.25 0 01-2.25-2.25v-2.5a2.25 2.25 0 012.25-2.25h1.383z" /></svg>
+                        <div class="text-4xl font-bold">27</div>
+                        <p class="mt-1 font-semibold text-gray-300">لحسابات الشركة</p>
+                    </div>
+                    <!-- بطاقة: تعليقات -->
+                    <div class="brand-bg-dark-blue p-6 rounded-xl text-center text-white transition-transform hover:scale-105 hover:shadow-lg">
+                        <svg class="w-10 h-10 brand-text-light-slate mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c.966 0 1.899.126 2.775.366A7.5 7.5 0 0018 21.75a3.75 3.75 0 003.75-3.75V9.75A3.75 3.75 0 0018 6h-6a3.75 3.75 0 00-3.75 3.75v8.25A3.75 3.75 0 009 21.75a7.5 7.5 0 003-1.5z" /></svg>
+                        <div class="text-4xl font-bold">2</div>
+                        <p class="mt-1 font-semibold text-gray-300">تعليق</p>
+                    </div>
+                    <!-- بطاقة: منشورات -->
+                    <div class="brand-bg-dark-blue p-6 rounded-xl text-center text-white transition-transform hover:scale-105 hover:shadow-lg">
+                         <svg class="w-10 h-10 brand-text-light-slate mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>
+                        <div class="text-4xl font-bold">2</div>
+                        <p class="mt-1 font-semibold text-gray-300">منشور</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. تساؤل الشهر (سؤال جديد) -->
+        <section class="p-8 bg-white">
+            <div class="text-center border-2 brand-border-terracotta border-dashed rounded-lg p-8">
+                 <h3 class="text-2xl font-bold brand-text-dark-blue mb-4">تساؤل الشهر 🤔</h3>
+                 <p class="text-xl brand-text-mid-blue mb-6">
+                    وش اكثر عادة او تصرف صغير لو التزمنا فيه كلنا بيحسن اجواء العمل؟
+                 </p>
+                 <a href="mailto:[ضع رابط البريد الإلكتروني أو المنتدى هنا]" class="inline-block text-white font-bold py-3 px-8 rounded-lg brand-bg-terracotta hover:opacity-90 transition-opacity duration-300">
+                    شاركنا فكرتك
+                 </a>
+            </div>
+        </section>
+        
+        <!-- 10. الفوتر -->
+        <footer class="text-center p-6 brand-bg-dark-blue text-gray-300">
+            <!-- [صورة شعار شركة سايبرك صغير] -->
+            <img src="https://www2.0zz0.com/2025/09/27/19/956410542.png" alt="شعار SIPRC" class="mx-auto mb-3 opacity-70 w-48">
+            <p class="text-sm">جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Logic for the interactive tabs ---
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // أولاً، قم بإزالة حالة 'active' من جميع الأزرار والمحتويات
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // ثانياً، أضف حالة 'active' إلى الزر الذي تم النقر عليه والمحتوى المرتبط به
+                    this.classList.add('active');
+                    const targetContentId = this.getAttribute('data-tab');
+                    const targetContent = document.getElementById(targetContentId);
+                    
+                    // Hide placeholder
+                    const placeholder = document.getElementById('answers-placeholder');
+                    if(placeholder) placeholder.classList.remove('active');
+
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+
+            // --- Logic for the new interactive survey ---
+            const surveyForm = document.getElementById('survey-form');
+            const surveyThanks = document.getElementById('survey-thanks');
+            const submitButton = document.getElementById('submit-survey');
+            const radioOptions = document.querySelectorAll('input[name="survey_option"]');
+            const suggestionBox = document.getElementById('suggestion-box');
+            const suggestionInput = document.getElementById('suggestion-text');
+
+            // إظهار أو إخفاء صندوق الاقتراح
+            if(radioOptions.length > 0 && suggestionBox) {
+                radioOptions.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        if (this.id === 'option_suggest' && this.checked) {
+                            suggestionBox.classList.remove('hidden');
+                            suggestionInput.focus();
+                        } else {
+                            suggestionBox.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+
+            // عند الضغط على زر الإرسال
+            if (submitButton) {
+                submitButton.addEventListener('click', function() {
+                    const selectedOption = document.querySelector('input[name="survey_option"]:checked');
+
+                    // تحقق من وجود اختيار
+                    if (!selectedOption) {
+                        // In a real app, use a nicer modal instead of alert.
+                        // For this context, we avoid alert()
+                        submitButton.textContent = 'الرجاء اختيار أحد الخيارات أولاً';
+                        submitButton.classList.add('bg-red-500');
+                        setTimeout(() => {
+                           submitButton.textContent = 'شاركنا رأيك الآن';
+                           submitButton.classList.remove('bg-red-500');
+                        }, 2000);
+                        console.log('الرجاء اختيار أحد الخيارات.'); 
+                        return;
+                    }
+
+                    // تحقق من أن حقل الاقتراح ليس فارغاً إذا تم اختياره
+                    if (selectedOption.id === 'option_suggest' && suggestionInput.value.trim() === '') {
+                        console.log('الرجاء كتابة مقترحك.');
+                        suggestionInput.focus();
+                        suggestionInput.classList.add('border-red-500');
+                         setTimeout(() => {
+                           suggestionInput.classList.remove('border-red-500');
+                        }, 2000);
+                        return;
+                    }
+
+                    // في تطبيق حقيقي، هنا نرسل البيانات (selectedOption.value, suggestionInput.value) إلى الخادم
+                    
+                    // إخفاء النموذج وإظهار رسالة الشكر
+                    if(surveyForm && surveyThanks) {
+                        surveyForm.style.display = 'none';
+                        surveyThanks.classList.remove('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
