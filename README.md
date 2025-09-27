@@ -1,0 +1,2 @@
+# monthly-newsletter-oct
+internalNewsletter
