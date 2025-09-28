@@ -12,6 +12,9 @@
             font-family: 'Readex Pro', 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
         }
         /* تعريف الألوان الرئيسية المستوحاة من الصورة المرفقة */
         :root {
@@ -47,11 +50,14 @@
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             border: none;
-            background-color: #f3f4f6; /* bg-gray-100 */
-            color: #6b7280; /* text-gray-500 */
+            background-color: var(--brand-light-slate);
+            color: #fff;
+            margin: 0.5rem;
+            text-align: center;
+            font-size: 16px;
         }
         .tab-btn:hover {
-            background-color: #e5e7eb; /* hover:bg-gray-200 */
+            background-color: var(--brand-mid-blue);
         }
         .tab-btn.active {
             background-color: var(--brand-dark-blue);
@@ -76,12 +82,11 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 brand-bg-off-white">
+<body>
     <div class="max-w-3xl mx-auto bg-white shadow-lg">
-
         <!-- 1. الهيدر -->
         <header class="py-8 px-6 flex justify-between items-center">
-             <img src="https://www2.0zz0.com/2025/09/27/19/410670894.png" alt="شعار SIPRC" class="w-40">
+            <img src="https://www2.0zz0.com/2025/09/27/19/410670894.png" alt="شعار SIPRC" class="w-40">
             <div class="text-left">
                 <h1 class="text-3xl font-bold brand-text-dark-blue">نشرة SIPRC الشهرية</h1>
                 <p class="text-lg text-gray-500 brand-text-slate-blue">أكتوبر</p>
