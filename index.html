@@ -16,6 +16,7 @@
             --blue-light: #8DA9B9;
             --blue-darkest: #001F46;
             --white: #fff;
+            --box-bg: #f7fafd;
         }
         body {
             background: var(--main-bg);
@@ -27,6 +28,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            text-align: center;
         }
         .newsletter-container {
             width: 100%;
@@ -65,7 +67,6 @@
         }
         /* Section Title */
         .section-title {
-            text-align: center;
             margin-top: 3rem;
             margin-bottom: 1.2rem;
             font-size: 2.2rem;
@@ -74,7 +75,6 @@
             letter-spacing: 0.5px;
         }
         .section-desc {
-            text-align: center;
             font-size: 1.1rem;
             color: var(--blue-mid);
             margin-bottom: 2.2rem;
@@ -100,6 +100,7 @@
             min-height: 220px;
             border-bottom: 4px solid var(--blue-light);
             transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
+            cursor: pointer;
         }
         .answer-card:hover {
             box-shadow: 0 10px 32px 0 rgba(0,31,70,.14);
@@ -118,7 +119,14 @@
             color: var(--blue-darkest);
             line-height: 2.04;
             text-align: right;
-            white-space: pre-line;
+            display: none; /* Initially hide the text */
+        }
+        .active .answer-text {
+            display: block; /* Show the text when clicked */
+            background-color: var(--box-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
         }
         @media (max-width: 768px) {
             .newsletter-container {
@@ -175,34 +183,34 @@
             </div>
             
             <div class="answers-grid">
-                <div class="answer-card">
+                <div class="answer-card" onclick="toggleAnswer(this)">
                     <div class="answer-author">محمد العمير</div>
                     <div class="answer-text">
                         المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
                     </div>
                 </div>
-                <div class="answer-card">
+                <div class="answer-card" onclick="toggleAnswer(this)">
                     <div class="answer-author">سارة المنيع</div>
                     <div class="answer-text">
                         المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
                         حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
                     </div>
                 </div>
-                <div class="answer-card">
+                <div class="answer-card" onclick="toggleAnswer(this)">
                     <div class="answer-author">تغريد عفيفي</div>
                     <div class="answer-text">
                         المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
                         الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
                     </div>
                 </div>
-                <div class="answer-card">
+                <div class="answer-card" onclick="toggleAnswer(this)">
                     <div class="answer-author">سعود القحطاني</div>
                     <div class="answer-text">
                         الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
                         لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
                     </div>
                 </div>
-                <div class="answer-card">
+                <div class="answer-card" onclick="toggleAnswer(this)">
                     <div class="answer-author">عبدالرحمن الجورني</div>
                     <div class="answer-text">
                         كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
@@ -212,5 +220,12 @@
             </div>
         </section>
     </div>
+
+    <script>
+        function toggleAnswer(card) {
+            // Toggle the 'active' class to show/hide the answer text
+            card.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
