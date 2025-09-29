@@ -109,7 +109,7 @@
             font-size: 1.2rem;
             text-align: right;
             color: var(--blue-darkest);
-            display: none;
+            display: block; /* إظهار الصندوق فور تحميل الصفحة */
             height: 200px;
             overflow-y: auto;
             box-shadow: 0 4px 12px rgba(0, 31, 70, 0.12);
@@ -127,6 +127,16 @@
             color: var(--blue-mid);
             margin-top: 1rem;
             font-weight: 500;
+        }
+        .footer-text {
+            font-size: 1rem;
+            color: var(--blue-darkest);
+            margin-top: 3rem;
+            font-weight: 400;
+            text-align: center;
+            padding: 15px;
+            background: var(--blue-light);
+            border-radius: 10px;
         }
         @media (max-width: 768px) {
             .newsletter-container {
@@ -180,7 +190,7 @@
 
             <!-- Comment box -->
             <div id="comment-box" class="comment-box">
-                <strong id="author-name">اضغط على اسم الموظف لعرض التعليق</strong>
+                <strong id="author-name">لمشاهدة المشاركة اضغط على الاسم</strong>
                 <p id="comment-text">اضغط على الأزرار أعلاه لعرض تعليقات الزملاء هنا.</p>
             </div>
 
@@ -190,6 +200,11 @@
             </div>
 
         </section>
+
+        <!-- Footer Text -->
+        <div class="footer-text">
+            فقرة نشوف فيها الجانب الابداعي فيكم ، نتطلع الى مشاركات اكثر الفترة الجاية.
+        </div>
     </div>
 
     <script>
