@@ -4,146 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>النشرة الشهرية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue-darkest: #001F46;
+            --main-gradient: linear-gradient(120deg, #001F46 40%, #8DA9B9 100%);
+            --main-bg: #f7f6f3;
+            --card-gradient: linear-gradient(135deg, #fff 70%, #e8ecef 100%);
+            --card-shadow: 0 4px 18px 0 rgba(30,60,90,0.11);
             --blue-dark: #163861;
             --blue-mid: #5C7991;
             --blue-light: #8DA9B9;
-            --off-white: #F7F6F3;
-            --grey-light: #E8ECEF;
-            --purple: #7d7cfa;
-            --gradient-header: linear-gradient(120deg, #001F46 40%, #5C7991 100%);
-            --gradient-card: linear-gradient(135deg, #e8ecef 60%, #f7f6f3 100%);
-            --gradient-card-hover: linear-gradient(120deg, #f7f6f3 70%, #c7daee 100%);
+            --blue-darkest: #001F46;
         }
         body {
-            font-family: 'Readex Pro', 'Inter', sans-serif;
+            background: var(--main-bg);
+            font-family: 'Readex Pro', Arial, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
-            background: var(--off-white);
-            min-height: 100vh;
             direction: rtl;
         }
         .newsletter-container {
-            max-width: 1050px;
-            margin: 36px auto 0 auto;
-            border-radius: 24px;
-            box-shadow: 0 4px 28px 0 rgba(0,31,70,0.11), 0 1.5px 4px 0 rgba(140,74,57,.06);
+            max-width: 1080px;
+            margin: 44px auto 0 auto;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 6px 28px 0 rgba(0,31,70,0.09), 0 2px 4px 0 rgba(140,74,57,.06);
             overflow: hidden;
             border: none;
-            background: linear-gradient(120deg, #f7f6f3 80%, #e8ecef 100%);
         }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2.3rem 2rem 1.3rem 2rem;
-            background: var(--gradient-header);
-            color: white;
+        /* Header */
+        .newsletter-header {
+            background: var(--main-gradient);
+            padding: 2.5rem 1.3rem 2.2rem 1.3rem;
+            text-align: center;
+            color: #fff;
             border-bottom-left-radius: 32px;
             border-bottom-right-radius: 32px;
-            text-align: center;
-            box-shadow: 0 6px 32px 0 rgba(0,31,70,0.13);
         }
-        .logo-img {
-            width: 170px;
-            max-width: 88vw;
+        .newsletter-header img {
+            width: 160px;
+            max-width: 80vw;
             margin-bottom: 1.1rem;
-            display: block;
-            filter: drop-shadow(0 2px 18px rgba(50,80,130,0.08));
         }
-        .header-title h1 {
+        .newsletter-header .main-title {
             font-size: 2.7rem;
             font-weight: bold;
-            margin: 0;
-            margin-bottom: 0.5rem;
-            color: #fff;
-            letter-spacing: 1px;
-            line-height: 1.13;
-            direction: rtl;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin: 0 0 0.6rem 0;
+            letter-spacing: 1.2px;
+            line-height: 1.12;
         }
-        .header-title .edition {
-            font-size: 1.22rem;
+        .newsletter-header .edition {
+            font-size: 1.23rem;
             color: var(--blue-light);
-            margin-top: 0.1rem;
             font-weight: 500;
-            direction: rtl;
-            letter-spacing: .5px;
+            margin-top: 0.5rem;
+            letter-spacing: 0.7px;
         }
+        /* Section Title */
         .section-title {
             text-align: center;
-            margin-bottom: 1.6rem;
-            margin-top: 2.1rem;
-            font-size: 2.1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.9rem;
+            font-size: 2rem;
             font-weight: bold;
             color: var(--blue-darkest);
             letter-spacing: 0.5px;
-            direction: rtl;
         }
         .section-desc {
             text-align: center;
-            font-size: 1.13rem;
+            font-size: 1.17rem;
             color: var(--blue-mid);
-            margin-bottom: 2.1rem;
-            max-width: 540px;
+            margin-bottom: 2.2rem;
+            max-width: 530px;
             margin-right: auto;
             margin-left: auto;
-            direction: rtl;
         }
+        /* Answers Grid */
         .answers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.4rem;
-            padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.6rem;
+            padding: 0 1.5rem 2.8rem 1.5rem;
         }
         .answer-card {
-            background: var(--gradient-card);
-            border-radius: 19px;
-            box-shadow: 0 2px 14px 0 rgba(100,140,180,0.10), 0 1.5px 4px 0 rgba(140,74,57,.04);
-            padding: 1.4rem 1.1rem 1.4rem 1.1rem;
-            min-height: 210px;
+            background: var(--card-gradient);
+            border-radius: 18px;
+            box-shadow: var(--card-shadow);
+            padding: 1.6rem 1.25rem 1.25rem 1.25rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            border-right: 6px solid var(--blue-light);
-            transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+            min-height: 220px;
+            border-bottom: 4px solid var(--blue-light);
+            transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
             position: relative;
         }
         .answer-card:hover {
-            background: var(--gradient-card-hover);
-            box-shadow: 0 6px 26px 0 rgba(140,169,185,.19);
-            border-right: 8px solid var(--blue-mid);
+            box-shadow: 0 10px 32px 0 rgba(0,31,70,.14);
+            border-bottom: 5px solid var(--blue-mid);
+            transform: translateY(-4px) scale(1.015);
+            background: #f7fafd;
         }
         .answer-author {
             font-weight: bold;
             font-size: 1.09rem;
-            color: var(--blue-darkest);
-            margin-bottom: 0.72rem;
-            letter-spacing: 0.2px;
+            color: var(--blue-dark);
+            margin-bottom: 1rem;
         }
         .answer-text {
-            font-size: 1.09rem;
-            color: var(--blue-dark);
-            line-height: 2.1;
+            font-size: 1.11rem;
+            color: var(--blue-darkest);
+            line-height: 2.04;
             text-align: right;
             direction: rtl;
             white-space: pre-line;
-            flex: 1;
         }
         @media (max-width: 700px) {
-            .newsletter-container { border-radius: 0; }
-            .answers-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            header { padding: 1.3rem 0.5rem 1.1rem 0.5rem;}
-            .logo-img { width: 90px; }
-            .header-title h1 { font-size: 1.45rem; }
-            .header-title .edition { font-size: 0.96rem; }
-            .section-title { font-size: 1.16rem; }
-            .section-desc { font-size: 0.98rem; }
-            .answer-card { padding: 1.1rem 0.7rem; min-height: 150px; }
+            .newsletter-container { border-radius: 0;}
+            .newsletter-header { padding: 1.4rem 0.5rem 1.1rem 0.5rem;}
+            .newsletter-header img { width: 80px; }
+            .newsletter-header .main-title { font-size: 1.35rem;}
+            .newsletter-header .edition { font-size: 1.01rem;}
+            .section-title { font-size: 1.18rem;}
+            .section-desc { font-size: 0.95rem;}
+            .answers-grid { gap: 1.1rem; padding: 0 0.4rem 1.5rem 0.4rem;}
+            .answer-card { padding: 1.1rem 0.6rem; min-height: 150px;}
             .answer-author { font-size: 1.01rem; }
             .answer-text { font-size: 0.98rem;}
         }
@@ -153,13 +138,11 @@
     <div class="newsletter-container">
 
         <!-- Header -->
-        <header>
-            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC" class="logo-img">
-            <div class="header-title">
-                <h1>نشرة SIPRC الشهرية</h1>
-                <span class="edition">إصدار أكتوبر</span>
-            </div>
-        </header>
+        <div class="newsletter-header">
+            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
+            <div class="main-title">نشرة SIPRC الشهرية</div>
+            <div class="edition">إصدار أكتوبر</div>
+        </div>
 
         <!-- Section -->
         <section>
