@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النشرة الشهرية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-gradient: linear-gradient(120deg, #001F46 40%, #8DA9B9 100%);
+            --main-bg: #f7f6f3;
+            --card-gradient: linear-gradient(135deg, #fff 70%, #e8ecef 100%);
+            --card-shadow: 0 4px 18px 0 rgba(30,60,90,0.11);
+            --blue-dark: #163861;
+            --blue-mid: #5C7991;
+            --blue-light: #8DA9B9;
+            --blue-darkest: #001F46;
+            --white: #fff;
+        }
+        body {
+            background: var(--main-bg);
+            font-family: 'Readex Pro', Arial, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .newsletter-container {
+            width: 100%;
+            max-width: 1080px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 6px 28px 0 rgba(0,31,70,0.09), 0 2px 4px 0 rgba(140,74,57,.06);
+            overflow: hidden;
+            padding: 20px;
+        }
+        /* Header */
+        .newsletter-header {
+            background: var(--main-gradient);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--white);
+            border-radius: 10px;
+        }
+        .newsletter-header img {
+            width: 120px;
+            max-width: 80vw;
+            margin-bottom: 1.1rem;
+        }
+        .newsletter-header .main-title {
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin: 0 0 0.6rem 0;
+            letter-spacing: 1.2px;
+            line-height: 1.12;
+        }
+        .newsletter-header .edition {
+            font-size: 1.2rem;
+            color: var(--blue-light);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--blue-darkest);
+            letter-spacing: 0.5px;
+        }
+        .section-desc {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--blue-mid);
+            margin-bottom: 2.2rem;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        /* Answers Grid */
+        .answers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            padding: 0 1.5rem 2.8rem 1.5rem;
+        }
+        .answer-card {
+            background: var(--card-gradient);
+            border-radius: 18px;
+            box-shadow: var(--card-shadow);
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 220px;
+            border-bottom: 4px solid var(--blue-light);
+            transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
+        }
+        .answer-card:hover {
+            box-shadow: 0 10px 32px 0 rgba(0,31,70,.14);
+            border-bottom: 5px solid var(--blue-mid);
+            transform: translateY(-4px) scale(1.015);
+            background: #f7fafd;
+        }
+        .answer-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--blue-dark);
+            margin-bottom: 1rem;
+        }
+        .answer-text {
+            font-size: 1.1rem;
+            color: var(--blue-darkest);
+            line-height: 2.04;
+            text-align: right;
+            white-space: pre-line;
+        }
+        @media (max-width: 768px) {
+            .newsletter-container {
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .newsletter-header img {
+                width: 100px;
+            }
+            .newsletter-header .main-title {
+                font-size: 1.8rem;
+            }
+            .newsletter-header .edition {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .section-desc {
+                font-size: 1rem;
+            }
+            .answers-grid {
+                gap: 1.2rem;
+            }
+            .answer-card {
+                padding: 1.2rem;
+                min-height: 150px;
+            }
+            .answer-author {
+                font-size: 1rem;
+            }
+            .answer-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <!-- Header -->
+        <div class="newsletter-header">
+            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
+            <div class="main-title">نشرة SIPRC الشهرية</div>
+            <div class="edition">إصدار أكتوبر</div>
+        </div>
+
+        <!-- Section -->
+        <section>
+            <div class="section-title">
+                أصداء تساؤل الشهر الماضي 🗣️
+            </div>
+            <div class="section-desc">
+                سألنا وش اخر فكرة خطرت في بالك لحل مشكلة ما، وإليكم إجابات الزملاء
+            </div>
+            
+            <div class="answers-grid">
+                <div class="answer-card">
+                    <div class="answer-author">محمد العمير</div>
+                    <div class="answer-text">
+                        المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
+                    </div>
+                </div>
+                <div class="answer-card">
+                    <div class="answer-author">سارة المنيع</div>
+                    <div class="answer-text">
+                        المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
+                        حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
+                    </div>
+                </div>
+                <div class="answer-card">
+                    <div class="answer-author">تغريد عفيفي</div>
+                    <div class="answer-text">
+                        المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
+                        الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
+                    </div>
+                </div>
+                <div class="answer-card">
+                    <div class="answer-author">سعود القحطاني</div>
+                    <div class="answer-text">
+                        الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
+                        لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
+                    </div>
+                </div>
+                <div class="answer-card">
+                    <div class="answer-author">عبدالرحمن الجورني</div>
+                    <div class="answer-text">
+                        كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
+                        قدرت احلها بعد ما عملت mind mapping اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ .
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
