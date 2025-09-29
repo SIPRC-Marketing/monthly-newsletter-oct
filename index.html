@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>النشرة الشهرية</title>
+    <title>صدى أكتوبر | المشاركات</title>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --main-gradient: linear-gradient(120deg, #001F46 40%, #8DA9B9 100%);
-            --main-bg: #f7f6f3;
-            --card-gradient: linear-gradient(135deg, #fff 70%, #e8ecef 100%);
-            --card-shadow: 0 4px 18px 0 rgba(30,60,90,0.11);
+            --main-bg: #E8EDF0;
+            --container-bg: #ffffff;
+            --card-bg: #FAFAFA;
+            --border-color: #E8EDF0;
             --blue-dark: #163861;
             --blue-mid: #5C7991;
-            --blue-light: #8DA9B9;
             --blue-darkest: #001F46;
+            --accent-red: #993B2C;
             --white: #fff;
-            --box-bg: #f7fafd;
-            --hover-gradient: linear-gradient(120deg, #001F46 60%, #5C7991 100%);
         }
         body {
             background: var(--main-bg);
@@ -30,26 +28,25 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
+            padding: 20px;
         }
         .newsletter-container {
             width: 100%;
             max-width: 1080px;
-            background: var(--white);
+            background: var(--container-bg);
             border-radius: 20px;
-            box-shadow: 0 6px 28px 0 rgba(0,31,70,0.09), 0 2px 4px 0 rgba(140,74,57,.06);
+            box-shadow: 0 6px 28px 0 rgba(0,31,70,0.09);
             overflow: hidden;
-            padding: 20px;
         }
         /* Header */
         .newsletter-header {
-            background: var(--main-gradient);
-            padding: 3rem 1.5rem;
+            background: var(--container-bg);
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            color: var(--white);
-            border-radius: 10px;
+            border-bottom: 1px solid var(--border-color);
         }
         .newsletter-header img {
-            width: 180px; /* جعل الشعار أكبر ليتناسب مع التصميم */
+            width: 180px;
             max-width: 100%;
             margin-bottom: 1.1rem;
         }
@@ -59,16 +56,17 @@
             margin: 0 0 0.6rem 0;
             letter-spacing: 1.2px;
             line-height: 1.12;
+            color: var(--blue-dark);
         }
         .newsletter-header .edition {
             font-size: 1.3rem;
-            color: var(--blue-light);
+            color: var(--blue-mid);
             font-weight: 500;
             margin-top: 0.5rem;
         }
         /* Section Title */
         .section-title {
-            margin-top: 3rem;
+            margin-top: 4rem;
             margin-bottom: 1.2rem;
             font-size: 2.2rem;
             font-weight: bold;
@@ -82,10 +80,11 @@
             max-width: 600px;
             margin-right: auto;
             margin-left: auto;
+            line-height: 1.7;
         }
         /* Buttons for names */
         .name-button {
-            background: var(--blue-dark);
+            background: var(--accent-red);
             color: var(--white);
             border: none;
             padding: 1rem;
@@ -93,52 +92,61 @@
             font-size: 1.2rem;
             cursor: pointer;
             border-radius: 10px;
-            transition: background 0.3s, transform 0.3s;
-            display: inline-block; /* لضمان التنسيق الجيد مع الأزرار */
+            transition: opacity 0.3s, transform 0.3s;
+            display: inline-block;
         }
         .name-button:hover {
-            background: var(--hover-gradient);
+            opacity: 0.9;
             transform: scale(1.05);
         }
         /* Comment box */
         .comment-box {
-            background: var(--box-bg);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             padding: 2rem;
             border-radius: 10px;
-            margin-top: 2rem;
+            margin: 2rem 20px;
             font-size: 1.2rem;
-            text-align: right;
             color: var(--blue-darkest);
-            display: block; /* إظهار الصندوق فور تحميل الصفحة */
-            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
             overflow-y: auto;
-            box-shadow: 0 4px 12px rgba(0, 31, 70, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 31, 70, 0.08);
+            line-height: 1.8;
+            text-align: center;
         }
         .comment-box p {
             margin-top: 1rem;
             font-size: 1.1rem;
+            text-align: right;
         }
         .comment-box strong {
             font-size: 1.3rem;
             color: var(--blue-dark);
         }
+        /* Footer */
         .footer-text {
             font-size: 1rem;
-            color: var(--blue-darkest);
-            margin-top: 3rem;
+            color: var(--white);
+            margin-top: 4rem;
             font-weight: 400;
             text-align: center;
-            padding: 15px;
-            background: var(--blue-light);
-            border-radius: 10px;
+            padding: 20px;
+            background: var(--blue-darkest);
         }
         @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
             .newsletter-container {
-                padding: 10px;
-                border-radius: 10px;
+                padding: 0;
+                border-radius: 0;
             }
             .newsletter-header img {
-                width: 120px; /* حجم مناسب للشعار في الشاشات الصغيرة */
+                width: 120px;
             }
             .newsletter-header .main-title {
                 font-size: 1.8rem;
@@ -148,9 +156,15 @@
             }
             .section-title {
                 font-size: 1.6rem;
+                margin-top: 3rem;
             }
             .section-desc {
                 font-size: 1rem;
+                padding: 0 15px;
+            }
+            .comment-box {
+                min-height: 150px;
+                 margin: 2rem 10px;
             }
         }
     </style>
@@ -185,7 +199,7 @@
             <!-- Comment box -->
             <div id="comment-box" class="comment-box">
                 <strong id="author-name">اضغط على الأسماء لمشاهدة مشاركات الزملاء</strong>
-                <p id="comment-text">اضغط على الأزرار أعلاه لعرض تعليقات الزملاء هنا.</p>
+                <p id="comment-text"></p>
             </div>
 
         </section>
@@ -198,11 +212,16 @@
 
     <script>
         function showComment(author, comment) {
-            // Display the comment box and update the text
-            document.getElementById('comment-box').style.display = 'block';
-            document.getElementById('author-name').textContent = 'تعليق: ' + author;
+            const commentBox = document.getElementById('comment-box');
+            // Change alignment for active comments
+            commentBox.style.justifyContent = 'flex-start';
+            commentBox.style.alignItems = 'flex-end';
+            
+            // Update the text
+            document.getElementById('author-name').textContent = author;
             document.getElementById('comment-text').textContent = comment;
         }
     </script>
 </body>
 </html>
+
