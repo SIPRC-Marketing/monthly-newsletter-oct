@@ -15,6 +15,7 @@
             --blue-mid: #5C7991;
             --blue-light: #8DA9B9;
             --blue-darkest: #001F46;
+            --white: #fff;
         }
         body {
             background: var(--main-bg);
@@ -22,82 +23,83 @@
             margin: 0;
             padding: 0;
             direction: rtl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .newsletter-container {
+            width: 100%;
             max-width: 1080px;
-            margin: 44px auto 0 auto;
-            background: #fff;
-            border-radius: 28px;
+            background: var(--white);
+            border-radius: 20px;
             box-shadow: 0 6px 28px 0 rgba(0,31,70,0.09), 0 2px 4px 0 rgba(140,74,57,.06);
             overflow: hidden;
-            border: none;
+            padding: 20px;
         }
         /* Header */
         .newsletter-header {
             background: var(--main-gradient);
-            padding: 2.5rem 1.3rem 2.2rem 1.3rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            color: #fff;
-            border-bottom-left-radius: 32px;
-            border-bottom-right-radius: 32px;
+            color: var(--white);
+            border-radius: 10px;
         }
         .newsletter-header img {
-            width: 160px;
+            width: 120px;
             max-width: 80vw;
             margin-bottom: 1.1rem;
         }
         .newsletter-header .main-title {
-            font-size: 2.7rem;
+            font-size: 2.4rem;
             font-weight: bold;
             margin: 0 0 0.6rem 0;
             letter-spacing: 1.2px;
             line-height: 1.12;
         }
         .newsletter-header .edition {
-            font-size: 1.23rem;
+            font-size: 1.2rem;
             color: var(--blue-light);
             font-weight: 500;
             margin-top: 0.5rem;
-            letter-spacing: 0.7px;
         }
         /* Section Title */
         .section-title {
             text-align: center;
-            margin-top: 2.5rem;
-            margin-bottom: 0.9rem;
-            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: var(--blue-darkest);
             letter-spacing: 0.5px;
         }
         .section-desc {
             text-align: center;
-            font-size: 1.17rem;
+            font-size: 1.1rem;
             color: var(--blue-mid);
             margin-bottom: 2.2rem;
-            max-width: 530px;
+            max-width: 600px;
             margin-right: auto;
             margin-left: auto;
         }
         /* Answers Grid */
         .answers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
             padding: 0 1.5rem 2.8rem 1.5rem;
         }
         .answer-card {
             background: var(--card-gradient);
             border-radius: 18px;
             box-shadow: var(--card-shadow);
-            padding: 1.6rem 1.25rem 1.25rem 1.25rem;
+            padding: 1.6rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             min-height: 220px;
             border-bottom: 4px solid var(--blue-light);
             transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
-            position: relative;
         }
         .answer-card:hover {
             box-shadow: 0 10px 32px 0 rgba(0,31,70,.14);
@@ -107,36 +109,55 @@
         }
         .answer-author {
             font-weight: bold;
-            font-size: 1.09rem;
+            font-size: 1.1rem;
             color: var(--blue-dark);
             margin-bottom: 1rem;
         }
         .answer-text {
-            font-size: 1.11rem;
+            font-size: 1.1rem;
             color: var(--blue-darkest);
             line-height: 2.04;
             text-align: right;
-            direction: rtl;
             white-space: pre-line;
         }
-        @media (max-width: 700px) {
-            .newsletter-container { border-radius: 0;}
-            .newsletter-header { padding: 1.4rem 0.5rem 1.1rem 0.5rem;}
-            .newsletter-header img { width: 80px; }
-            .newsletter-header .main-title { font-size: 1.35rem;}
-            .newsletter-header .edition { font-size: 1.01rem;}
-            .section-title { font-size: 1.18rem;}
-            .section-desc { font-size: 0.95rem;}
-            .answers-grid { gap: 1.1rem; padding: 0 0.4rem 1.5rem 0.4rem;}
-            .answer-card { padding: 1.1rem 0.6rem; min-height: 150px;}
-            .answer-author { font-size: 1.01rem; }
-            .answer-text { font-size: 0.98rem;}
+        @media (max-width: 768px) {
+            .newsletter-container {
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .newsletter-header img {
+                width: 100px;
+            }
+            .newsletter-header .main-title {
+                font-size: 1.8rem;
+            }
+            .newsletter-header .edition {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .section-desc {
+                font-size: 1rem;
+            }
+            .answers-grid {
+                gap: 1.2rem;
+            }
+            .answer-card {
+                padding: 1.2rem;
+                min-height: 150px;
+            }
+            .answer-author {
+                font-size: 1rem;
+            }
+            .answer-text {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="newsletter-container">
-
         <!-- Header -->
         <div class="newsletter-header">
             <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
@@ -157,38 +178,35 @@
                 <div class="answer-card">
                     <div class="answer-author">محمد العمير</div>
                     <div class="answer-text">
-المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
+                        المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
                     </div>
                 </div>
                 <div class="answer-card">
                     <div class="answer-author">سارة المنيع</div>
                     <div class="answer-text">
-المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
-حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
+                        المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
+                        حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
                     </div>
                 </div>
                 <div class="answer-card">
                     <div class="answer-author">تغريد عفيفي</div>
                     <div class="answer-text">
-المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
-
-الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
+                        المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
+                        الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
                     </div>
                 </div>
                 <div class="answer-card">
                     <div class="answer-author">سعود القحطاني</div>
                     <div class="answer-text">
-الملفات كانت تتراكم علي 
-والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
-
-لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
+                        الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
+                        لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
                     </div>
                 </div>
                 <div class="answer-card">
                     <div class="answer-author">عبدالرحمن الجورني</div>
                     <div class="answer-text">
-كان عندي مشكلة blocking mind  اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
-قدرت احلها بعد ما عملت mind mapping  اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي  ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ .
+                        كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
+                        قدرت احلها بعد ما عملت mind mapping اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ .
                     </div>
                 </div>
             </div>
