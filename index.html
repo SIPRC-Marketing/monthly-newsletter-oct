@@ -27,7 +27,7 @@
             direction: rtl;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             text-align: center;
         }
@@ -43,25 +43,25 @@
         /* Header */
         .newsletter-header {
             background: var(--main-gradient);
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
             text-align: center;
             color: var(--white);
             border-radius: 10px;
         }
         .newsletter-header img {
-            width: 120px;
-            max-width: 80vw;
+            width: 180px; /* جعل الشعار أكبر ليتناسب مع التصميم */
+            max-width: 100%;
             margin-bottom: 1.1rem;
         }
         .newsletter-header .main-title {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: bold;
             margin: 0 0 0.6rem 0;
             letter-spacing: 1.2px;
             line-height: 1.12;
         }
         .newsletter-header .edition {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--blue-light);
             font-weight: 500;
             margin-top: 0.5rem;
@@ -94,6 +94,7 @@
             cursor: pointer;
             border-radius: 10px;
             transition: background 0.3s, transform 0.3s;
+            display: inline-block; /* لضمان التنسيق الجيد مع الأزرار */
         }
         .name-button:hover {
             background: var(--hover-gradient);
@@ -111,6 +112,7 @@
             display: none;
             height: 200px;
             overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0, 31, 70, 0.12);
         }
         .comment-box p {
             margin-top: 1rem;
@@ -132,7 +134,7 @@
                 border-radius: 10px;
             }
             .newsletter-header img {
-                width: 100px;
+                width: 120px; /* حجم مناسب للشعار في الشاشات الصغيرة */
             }
             .newsletter-header .main-title {
                 font-size: 1.8rem;
