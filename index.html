@@ -26,9 +26,10 @@
             direction: rtl;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             text-align: center;
+            padding-top: 30px;
         }
         .newsletter-container {
             width: 100%;
@@ -82,51 +83,31 @@
             margin-right: auto;
             margin-left: auto;
         }
-        /* Answers Grid */
-        .answers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem;
-            padding: 0 1.5rem 2.8rem 1.5rem;
-        }
-        .answer-card {
-            background: var(--card-gradient);
-            border-radius: 18px;
-            box-shadow: var(--card-shadow);
-            padding: 1.6rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            min-height: 220px;
-            border-bottom: 4px solid var(--blue-light);
-            transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
-            cursor: pointer;
-        }
-        .answer-card:hover {
-            box-shadow: 0 10px 32px 0 rgba(0,31,70,.14);
-            border-bottom: 5px solid var(--blue-mid);
-            transform: translateY(-4px) scale(1.015);
-            background: #f7fafd;
-        }
-        .answer-author {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--blue-dark);
-            margin-bottom: 1rem;
-        }
-        .answer-text {
-            font-size: 1.1rem;
-            color: var(--blue-darkest);
-            line-height: 2.04;
-            text-align: right;
-            display: none; /* Initially hide the text */
-        }
-        .active .answer-text {
-            display: block; /* Show the text when clicked */
-            background-color: var(--box-bg);
+        /* Buttons for names */
+        .name-button {
+            background: var(--blue-dark);
+            color: var(--white);
+            border: none;
             padding: 1rem;
+            margin: 0.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
             border-radius: 10px;
-            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        .name-button:hover {
+            background: var(--blue-mid);
+        }
+        /* Comment box */
+        .comment-box {
+            background: var(--box-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            display: none;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            text-align: right;
+            color: var(--blue-darkest);
         }
         @media (max-width: 768px) {
             .newsletter-container {
@@ -146,19 +127,6 @@
                 font-size: 1.6rem;
             }
             .section-desc {
-                font-size: 1rem;
-            }
-            .answers-grid {
-                gap: 1.2rem;
-            }
-            .answer-card {
-                padding: 1.2rem;
-                min-height: 150px;
-            }
-            .answer-author {
-                font-size: 1rem;
-            }
-            .answer-text {
                 font-size: 1rem;
             }
         }
@@ -181,50 +149,51 @@
             <div class="section-desc">
                 سألنا وش اخر فكرة خطرت في بالك لحل مشكلة ما، وإليكم إجابات الزملاء
             </div>
-            
-            <div class="answers-grid">
-                <div class="answer-card" onclick="toggleAnswer(this)">
-                    <div class="answer-author">محمد العمير</div>
-                    <div class="answer-text">
-                        المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
-                    </div>
-                </div>
-                <div class="answer-card" onclick="toggleAnswer(this)">
-                    <div class="answer-author">سارة المنيع</div>
-                    <div class="answer-text">
-                        المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
-                        حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
-                    </div>
-                </div>
-                <div class="answer-card" onclick="toggleAnswer(this)">
-                    <div class="answer-author">تغريد عفيفي</div>
-                    <div class="answer-text">
-                        المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
-                        الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
-                    </div>
-                </div>
-                <div class="answer-card" onclick="toggleAnswer(this)">
-                    <div class="answer-author">سعود القحطاني</div>
-                    <div class="answer-text">
-                        الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
-                        لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
-                    </div>
-                </div>
-                <div class="answer-card" onclick="toggleAnswer(this)">
-                    <div class="answer-author">عبدالرحمن الجورني</div>
-                    <div class="answer-text">
-                        كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
-                        قدرت احلها بعد ما عملت mind mapping اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ .
-                    </div>
-                </div>
+
+            <!-- Buttons for names -->
+            <div>
+                <button class="name-button" onclick="showComment('comment1')">محمد العمير</button>
+                <button class="name-button" onclick="showComment('comment2')">سارة المنيع</button>
+                <button class="name-button" onclick="showComment('comment3')">تغريد عفيفي</button>
+                <button class="name-button" onclick="showComment('comment4')">سعود القحطاني</button>
+                <button class="name-button" onclick="showComment('comment5')">عبدالرحمن الجورني</button>
             </div>
+
+            <!-- Comment box -->
+            <div id="comment1" class="comment-box">
+                المشكلة الي أفكر فيها حاليا هي كيف بامكاني المساهمة في تطوير الية الاعلانات، خصوصا في القنوات التلفزيونية والعاب الجوال... ارى انها ما زالت تعمل بطريقة تقليدية ولم تتعرض الى تطوير كبير منذ اطلاقها.
+            </div>
+            <div id="comment2" class="comment-box">
+                المشكلة كانت اني ما حصلت مساحة امنة اعبر فيها وقت الضغط والتراكمات وكنت اظن عدم وجود مساحة تصرف طبيعي، لين اكتشفت اني بدون ما احس ارسم سكتشات عشوائية وانا افكر او وقت ما اكون مضغوطة
+                حسيت وقتها كأني أفرغ على الورق بطريقة غير مباشرة وكان فعلًا يخفف أشياء ما كنت حتى منتبهه لها ومن يومها وانا صرت اشوفه حل للتراكمات والضغط
+            </div>
+            <div id="comment3" class="comment-box">
+                المشكلة: ناس كتير بتشتكي إن وقتها مش بيكفي، وكل يوم بيخلص وهم لسه عندهم مهام متأخرة.
+                الحل والفكرة: لو الإنسان بدأ يومه بأهم ٣ حاجات بس (الأولويات الحقيقية) ونفذهم قبل أي حاجة تانية، حتى لو اليوم خلص هيكون أنجز المهم بدل ما يضيع وقته في تفاصيل صغيرة وهيشعر بالرضا ويجدول باقي المهام لتصبح اولويه.
+            </div>
+            <div id="comment4" class="comment-box">
+                الملفات كانت تتراكم علي والسبب رسالة بالواتس او الايميل لشغلة ثانية. الحركة هذي لاحظت انها تقلل من انتاجيتي بشكل كبير.
+                لذا قررت قبل ابدا اشتغل على ملف اقفل الاشعارات كاملة ، مالي الا اسبوع واحس نتائجها فعالة.
+            </div>
+            <div id="comment5" class="comment-box">
+                كان عندي مشكلة blocking mind اي بمعنى ما احس اطلع بافكار جديدة او حتى حلول سليمة وسريعة
+                قدرت احلها بعد ما عملت mind mapping اي انو ارسم خريطة ذهنية للافكار بدل كتابتها بشكل نصي او خطي ساعدتني كثير على حل المشاكل وزادت الانتاجية بشكل ملحوظ .
+            </div>
+
         </section>
     </div>
 
     <script>
-        function toggleAnswer(card) {
-            // Toggle the 'active' class to show/hide the answer text
-            card.classList.toggle('active');
+        function showComment(commentId) {
+            // Hide all comments first
+            const comments = document.querySelectorAll('.comment-box');
+            comments.forEach(comment => {
+                comment.style.display = 'none';
+            });
+            
+            // Show the selected comment
+            const comment = document.getElementById(commentId);
+            comment.style.display = 'block';
         }
     </script>
 </body>
