@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدى أكتوبر</title>
+    <title>صدى أكتوبر | المشاركات</title>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -124,29 +124,48 @@
         }
         .comment-box p {
             margin-top: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             text-align: center;
         }
         .comment-box strong {
-            font-size: 1.1rem;
-            color: var(--blue-dark);
+            font-size: 1.3rem;
+            color: var(--blue-mid);
             text-align: center;
         }
+
+        .comment-box.active {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .comment-box .active-comment {
+            text-align: right;
+        }
+        
+        .comment-box .active-author {
+            order: 1; /* Pushes it to the bottom of the flex container */
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem; /* Two steps smaller */
+            color: var(--blue-dark);
+            margin-top: 1.5rem;
+        }
+        
         /* Footer */
         .newsletter-footer {
-            padding: 0.2rem 0.2rem;
+            padding: 1rem 1rem;
             text-align: center;
             background: var(--blue-darkest);
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
         .newsletter-footer img {
-            width: 200px;
-            margin-bottom: 1rem;
+            width: 225px;
+            margin-bottom: 0.25rem;
         }
         .newsletter-footer p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--white);
-            margin: 1rem;
+            margin: 0;
         }
         @media (max-width: 768px) {
             body {
@@ -157,13 +176,13 @@
                 border-radius: 0;
             }
             .newsletter-header .main-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .newsletter-header .edition {
                 font-size: 1rem;
             }
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 margin-top: 3rem;
             }
             .section-desc {
@@ -214,24 +233,28 @@
 
         <!-- Footer -->
         <div class="newsletter-footer">
-            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC" style="width: 300px; height: auto;">
-    
-            <p>جميع الحقوق محفوظة © 2025</p>
+            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
+            <p>جميع الحقوق محفوظة &copy; 2025</p>
         </div>
     </div>
 
     <script>
         function showComment(author, comment) {
             const commentBox = document.getElementById('comment-box');
-            // Change alignment for active comments
-            commentBox.style.justifyContent = 'flex-start';
-            commentBox.style.alignItems = 'flex-end';
+            const authorName = document.getElementById('author-name');
+            const commentText = document.getElementById('comment-text');
             
-            // Update the text
-            document.getElementById('author-name').textContent = author;
-            document.getElementById('comment-text').textContent = comment;
+            // Add active class to the container to handle alignment
+            commentBox.classList.add('active');
+
+            // Add active classes for styling individual elements
+            authorName.classList.add('active-author');
+            commentText.classList.add('active-comment');
+            
+            // Update the text content
+            authorName.textContent = '- ' + author;
+            commentText.textContent = comment;
         }
     </script>
 </body>
 </html>
-
