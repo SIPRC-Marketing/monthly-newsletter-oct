@@ -18,7 +18,7 @@
             --white: #fff;
         }
         body {
-            background: var(--main-bg);
+            background-color: var(--main-bg);
             font-family: 'Readex Pro', Arial, Tahoma, sans-serif;
             margin: 0;
             padding: 0;
@@ -40,15 +40,9 @@
         }
         /* Header */
         .newsletter-header {
-            background: var(--container-bg);
+            background: var(--blue-darkest);
             padding: 2.5rem 1.5rem;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .newsletter-header img {
-            width: 180px;
-            max-width: 100%;
-            margin-bottom: 1.1rem;
         }
         .newsletter-header .main-title {
             font-size: 2.6rem;
@@ -56,13 +50,23 @@
             margin: 0 0 0.6rem 0;
             letter-spacing: 1.2px;
             line-height: 1.12;
-            color: var(--blue-dark);
+            color: var(--white);
         }
         .newsletter-header .edition {
-            font-size: 1.3rem;
+            font-size: 0.7rem;
             color: var(--blue-mid);
             font-weight: 500;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
+        }
+        .header-desc {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-top: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
         /* Section Title */
         .section-title {
@@ -102,12 +106,12 @@
         /* Comment box */
         .comment-box {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 0.2px solid var(--border-color);
             padding: 2rem;
             border-radius: 10px;
             margin: 2rem 20px;
             font-size: 1.2rem;
-            color: var(--blue-darkest);
+            color: var(--blue-mid);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -121,21 +125,28 @@
         .comment-box p {
             margin-top: 1rem;
             font-size: 1.1rem;
-            text-align: right;
+            text-align: center;
         }
         .comment-box strong {
             font-size: 1.3rem;
             color: var(--blue-dark);
+            text-align: center;
         }
         /* Footer */
-        .footer-text {
+        .newsletter-footer {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: var(--blue-darkest);
+            margin-top: 4rem;
+        }
+        .newsletter-footer img {
+            width: 200px;
+            margin-bottom: 1rem;
+        }
+        .newsletter-footer p {
             font-size: 1rem;
             color: var(--white);
-            margin-top: 4rem;
-            font-weight: 400;
-            text-align: center;
-            padding: 20px;
-            background: var(--blue-darkest);
+            margin: 0;
         }
         @media (max-width: 768px) {
             body {
@@ -144,9 +155,6 @@
             .newsletter-container {
                 padding: 0;
                 border-radius: 0;
-            }
-            .newsletter-header img {
-                width: 120px;
             }
             .newsletter-header .main-title {
                 font-size: 1.8rem;
@@ -173,9 +181,9 @@
     <div class="newsletter-container">
         <!-- Header -->
         <div class="newsletter-header">
-            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
-            <div class="main-title">نشرة SIPRC الشهرية</div>
+            <div class="main-title">  النشرة الشهرية</div>
             <div class="edition">إصدار أكتوبر</div>
+            <p class="header-desc">فقرة نشوف فيها الجانب الابداعي فيكم ، نتطلع الى مشاركات اكثر الفترة الجاية.</p>
         </div>
 
         <!-- Section -->
@@ -184,7 +192,7 @@
                 أصداء تساؤل الشهر الماضي 🗣️
             </div>
             <div class="section-desc">
-                سألنا وش اخر فكرة خطرت في بالك لحل مشكلة ما، وإليكم إجابات الزملاء
+                سألنا وش اخر فكرة خطرت في بالك لحل مشكلة ما، وإليكم مشاركات الزملاء
             </div>
 
             <!-- Buttons for names -->
@@ -198,15 +206,16 @@
 
             <!-- Comment box -->
             <div id="comment-box" class="comment-box">
-                <strong id="author-name">اضغط على الأسماء لمشاهدة مشاركات الزملاء</strong>
+                <strong id="author-name">اضغط على الأسم لمشاهدة المشاركة </strong>
                 <p id="comment-text"></p>
             </div>
 
         </section>
 
-        <!-- Footer Text -->
-        <div class="footer-text">
-            فقرة نشوف فيها الجانب الابداعي فيكم ، نتطلع الى مشاركات اكثر الفترة الجاية.
+        <!-- Footer -->
+        <div class="newsletter-footer">
+            <img src="https://www2.0zz0.com/2025/09/28/21/797906442.png" alt="شعار SIPRC">
+            <p>جميع الحقوق محفوظة © 2025</p>
         </div>
     </div>
 
@@ -224,4 +233,3 @@
     </script>
 </body>
 </html>
-
